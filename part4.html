@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="trip.css" />
+    <link rel="stylesheet" href="reset.css" />
+</head>
+<body>
+    <nav>
+        <a href="part1.html"><div>PART1</div></a>
+        <a href="part2.html"><div>PART2</div></a>
+        <a href="index.html"><div class="navTitle">
+            <div class="title1">Wanderer</div>
+            <div class="title2">방랑자 · 여행자</div>
+        </div></a>
+        <a href="part3.html"><div>PART3</div></a>
+        <a href="part4.html"><div>PART4</div></a>
+    </nav>
+
+    <section class="part4Con01">
+        <div class="part4Title mover">GAME</div>
+    </section>
+    <section class="part4Con02">
+        <div class="mover"><img src="./source_electronic/g01.jpg" draggable="false" alt='img' /></div>
+        <div class="mover"><img src="./source_electronic/g02.jpg" draggable="false" alt='img' /></div>
+        <div class="mover"><img src="./source_electronic/g03.jpg" draggable="false" alt='img' /></div>
+        <div class="mover"><img src="./source_electronic/g04.jpg" draggable="false" alt='img' /></div>
+        <div class="mover"><img src="./source_electronic/g05.jpg" draggable="false" alt='img' /></div>
+        <div class="mover"><img src="./source_electronic/g06.jpg" draggable="false" alt='img' /></div>
+        <div class="mover"><img src="./source_electronic/g08.jpg" draggable="false" alt='img' /></div>
+        <div class="mover"><img src="./source_electronic/g09.jpg" draggable="false" alt='img' /></div>
+        <div class="mover">Drag<br>Anything!</div>
+    </section>
+    <footer>
+        <div class="footText">
+            <div>※ 본 프로젝트는 사전에 작성된 기획서에 의거해 제작되었습니다.</div>
+            <div>※ 본 프로젝트는 학습목적의 비상업용 포트폴리오입니다.</div>
+        </div>
+        <div class="lastText">
+            <div>Roor of Wanderer · 최서하</div>
+        </div>
+        <div class="Btn">기획서 보기</div>
+    </footer>
+
+    <script>
+        function dragAble(t){
+            let down=false
+            let px=0, py=0, tx=0, ty=0
+            t.addEventListener('mousedown', (e)=>{
+                down=true
+                px=e.clientX
+                py=e.clientY
+            })
+            window.addEventListener('mousemove', (e)=>{
+                if(!down)return
+                let dx=e.clientX-px 
+                let dy=e.clientY-py
+                px=e.clientX
+                py=e.clientY
+                tx+=dx
+                ty+=dy
+                t.style.transform=`translate(${tx}px,${ty}px)`
+            })
+            window.addEventListener('mouseup', ()=>{
+                down=false
+            })
+        }
+
+        let mover=document.querySelectorAll('.mover')
+        mover.forEach((e)=>{
+            dragAble(e)
+        })
+        
+    </script>
+</body>
+</html>
