@@ -148,9 +148,9 @@
 *{margin: 0; padding: 0; user-select: none;}
 body{font-family: 'Paperozi'; width: 100vw; overflow-x: hidden; background-color: #E9f0f0;}
 .container01{width: 100%; height: 100vh; position: relative; background-image: url('./main_title.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;}
-.title{color: #F7F5F2; font-weight: bold; font-size: 48px; position: fixed; top: 47%; left: 36%; z-index: 10; opacity: 0; transform: translateY(-50px); transition: all 1.2s linear;}
+.title{color: #F7F5F2; font-weight: bold; font-size: 48px; position: fixed; top: 47%; left: 40%; z-index: 10; opacity: 0; transform: translateY(-50px); transition: all 1.2s linear;}
 .title.on{opacity: 0.8; transform: translateY(0px); }
-.mainArrow{position: absolute; top: 95%; left: 50%; animation: scrollArrow 1s infinite;}
+.mainArrow{position: absolute; bottom: 5%; left: 50%; animation: scrollArrow 1s infinite;}
 
 @keyframes scrollArrow{
     50%{transform: translateY(5px)}
@@ -160,13 +160,32 @@ body{font-family: 'Paperozi'; width: 100vw; overflow-x: hidden; background-color
 .container02>div{width: 100%; height: 50vh; overflow: hidden; position: relative;}
 .container02>div>a>img{object-fit: cover; width: 100%; height: 100%; filter: brightness(0.5); transition: all 0.3s linear; cursor: pointer;}
 .container02>div>a>img:hover{filter: brightness(1); transform: scale(1.1);}
-.container02>div>a>p{position: absolute; top: 50%; left: 50%; z-index: 5; font-size: 20px; color: #F7F5F2;}
+.subTitle{position: absolute; top: 50%; left: 45%; z-index: 5; font-size: 20px; color: #F7F5F2;}
+
+    /*모바일*/
+    @media(max-width:480px){
+        .title{top: 43.5%; left: 24%;}
+        .mainArrow{left: 45%;}
+        .subTitle{left: 35%;}
+    }
 
 /* 여기부터 네비게이션 */
 nav{width: 100%; height: 60px; background-color: #6f6869; color: #F7F5F2; display: flex; justify-content: center; align-items: center; gap: 200px;}
 .navTitle{cursor: pointer; text-align: center;}
 .title1{font-size: 24px; font-family: 'Aggravo';}
 .title2{font-size: 10px;}
+.mobileNav{display: none;}
+
+    /*모바일*/
+    @media(max-width:480px){
+        nav>a{display: none;}
+        .mobileNav {display: flex; justify-content: center; align-items: center; gap: 120px; background-color: #6f6869; height: 60px; padding: 5px 15px; position: fixed; width: 105%; top: 0; z-index: 100;}
+        .hamburger {font-size: 28px; color: #F7F5F2;}
+        .mobileMenu {display: none; flex-direction: column; background-color: #6f6869; width: 110%; position: absolute; top: 45px; left: -5%;}
+        .mobileMenu.show { display: flex; }
+        .mobileMenu a {padding: 10px; text-align: center; border-top: 1px solid #555; color: #F7F5F2; text-decoration: none; font-size: 16px;}
+        .mobileMenu a:hover {background-color: #555;}
+    }
 
 /* 여기부터 PART1 */
 .part1Con01{width: 100%; height:100vh; position: relative;}
@@ -179,30 +198,50 @@ nav{width: 100%; height: 60px; background-color: #6f6869; color: #F7F5F2; displa
 .part1img02{height: 29%; left: 0; bottom:10.5%;}
 .part1img01>img, .part1img02>img{width: 100%; height: 100%; object-fit: cover;}
 
+    /*모바일*/
+    @media(max-width:480px){
+        .part1Con01{display: flex; flex-direction: column; position: static; height:auto; gap: 10px; margin: 10px 0;}
+        .part1Title, .part1Box01, .part1Box02, .part1img01, .part1img02{position: static; width: 100%; display: block;}
+    }
+
 /* 여기부터 PART2 */
 .part1Con02{width: 100%; position: relative;}
-.part2Title{color: #6f6869; text-align: center; line-height: 150px; font-size: 60px; width: 800px; height: 120px; position: absolute; top: 10%; left: 5%;}
+.part2Title{background-color: #F7F5F2; color: #6f6869; font-weight: bold; line-height: 100px; padding: 10px 20px; font-size: 60px; width: 1085px; height: 110px; position: absolute; top: 11%; left: 10%;}
 .part2Box01{margin: 10px auto; width: 80%; height: 1600px; position: relative; }
 .part2Box01>div{position: absolute;}
-.part2Box01>div:nth-child(1){top: 10%; left: 0;}
-.part2Box01>div:nth-child(2){top: 10%; left: 29.5%;}
-.part2Box01>div:nth-child(3){top: 1.9%; right: 0;}
-.part2Box01>div:nth-child(4){top: 51.5%; left: 0;}
-.part2Box01>div:nth-child(5){top: 38.5%; left: 29.5%;}
-.part2Box01>div:nth-child(6){top: 38.5%; right: 0;}
-.part2Box01>div:nth-child(7){top: 73.5%; left: 29.5%;}
-.part2Box01>div:nth-child(8){top: 89.5%; right: 0;}
+.part2Box01>div:nth-child(1){top: 10%; left: 0; width: 27.5%;}
+.part2Box01>div:nth-child(2){top: 10%; right: 29.5%; width: 41.2%;}
+.part2Box01>div:nth-child(3){top: 1.9%; right: 0; width: 27.3%;}
+.part2Box01>div:nth-child(4){top: 51.5%; left: 0; width: 27.5%;}
+.part2Box01>div:nth-child(5){top: 38.5%; left: 29.5%; width: 27.5%;}
+.part2Box01>div:nth-child(6){top: 38.5%; right: 0; width: 41%;}
+.part2Box01>div:nth-child(7){top: 73.5%; left: 29.5%; width: 27.5%;}
+.part2Box01>div:nth-child(8){top: 89.5%; right: 0; width: 41%;}
 
 .fade-in {opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out;}
 .fade-in.show {opacity: 1; transform: translateY(0);}
+
+    /*모바일*/
+    @media(max-width:480px){
+        .part2Title{font-size: 28px; width: 92%; height: 60px; text-align: center; line-height: 40px; left: 5%;}
+        .part2Box01{width: 90%; height: 1100px;}
+        .part2Box01>div:nth-child(1){top: 8%; left: 0; width: 48%;}
+        .part2Box01>div:nth-child(2){top: 8%; right: 0; width: 48%;}
+        .part2Box01>div:nth-child(3){top: 22%; right: 0; width: 48%;}
+        .part2Box01>div:nth-child(4){top: 37.5%; right: 0; width: 48%;}
+        .part2Box01>div:nth-child(5){top: 48%; left: 52%; width: 48%;}
+        .part2Box01>div:nth-child(6){top: 73%; right: 0; width: 48%;}
+        .part2Box01>div:nth-child(7){top: 72.5%; left: 0; width: 48%;}
+        .part2Box01>div:nth-child(8){top: 92.5%; left: 0; width: 48%;}
+    }
 
 /* 여기부터 PART3 */
 .part3Box01 {display: flex; flex-direction: column; gap: 20px; overflow: hidden; width: 100%; margin: 20px auto;}
 .rollLeft, .rollRight {display: inline-flex; gap: 20px; white-space: nowrap; justify-content: center;}
 .rollLeft li, .rollRight li {flex-shrink: 0;}
 .rollLeft img, .rollRight img {cursor: pointer; height: 400px; object-fit: contain;}
-.rollLeft {animation: rollLeftAnim 40s linear infinite;}
-.rollRight {animation: rollRightAnim 40s linear infinite;}
+.rollLeft {animation: rollLeftAnim 30s linear infinite;}
+.rollRight {animation: rollRightAnim 30s linear infinite;}
 .rollLeft:hover, .rollRight:hover {animation-play-state: paused;}
 @keyframes rollLeftAnim {
     from { transform: translateX(0); }
@@ -211,6 +250,11 @@ nav{width: 100%; height: 60px; background-color: #6f6869; color: #F7F5F2; displa
 @keyframes rollRightAnim {
     from { transform: translateX(0%); }
     100% { transform: translateX(50%); }}
+
+    /*모바일*/
+    @media(max-width:480px){
+        .rollLeft img, .rollRight img{height: 300px;}
+    }
 
 /* 여기부터 PART4 */
 .part4Con01{width: 100%; height: 100vh; position: relative; overflow: hidden;}
@@ -229,8 +273,19 @@ nav{width: 100%; height: 60px; background-color: #6f6869; color: #F7F5F2; displa
 .part4Con02 > div:nth-child(9){background-color: #C08167; color: #F7F5F2; font-weight: 600; text-align: left; font-size: 48px; padding: 25px 25px; width: 300px; height: 170px; left: 64%; top: 5%;}
 .part4Con02>.mover>img{width: 100%; object-fit: contain; cursor: grab;}
 
+    /*모바일*/
+    @media(max-width:480px){}
+
 /* 여기부터 footer */
-footer{display: flex; justify-content: center; align-items: center; gap: 30%; color: #F7F5F2; background-color: #6f6869; width: 100%; height: 60px;}
+footer{display: flex; justify-content: center; align-items: center; gap: 25%; color: #F7F5F2; background-color: #6f6869; width: 100%; height: 60px;}
 .footText{font-size: 14px; padding: 10px 10px; line-height: 20px;}
 .lastText{font-size: 18px; padding: 10px 10px; line-height: 20px;}
 .Btn{background-color: #F7F5F2; color: #6f6869; padding: 10px 15px; cursor: pointer;}
+
+    /*모바일*/
+    @media(max-width:480px){
+        footer{gap: 10px;}
+        .footText{font-size: 7px; padding: 2px 5px;}
+        .lastText{font-size: 8px; padding: 2px 5px;}
+        .Btn{padding: 2px 5px;}
+    }

@@ -14,22 +14,32 @@
     </section>
     <section class="container02">
         <div>
-            <a href="part1.html"><p>PART1</p>
+            <a href="part1.html"><div class="subTitle">PART1</div>
             <img src="./source_photo/mainImg.jpg" alt=img/></a>
         </div>
         <div class="img2">
-            <a href="part2.html"><p>PART2</p>
+            <a href="part2.html"><div class="subTitle">PART2</div>
             <img src="./source_sewing/mainImg.jpg" alt=img/></a>
         </div>
         <div class="img3">
-            <a href="part3.html"><p>PART3</p>
+            <a href="part3.html"><div class="subTitle">PART3</div>
             <img src="./source_chinese/mainImg.jpg" alt=img/></a>
         </div>
         <div class="img4">
-            <a href="part4.html"><p>PART4</p>
+            <a href="part4.html"><div class="subTitle">PART4</div>
+            
             <img src="./source_electronic/mainImg.jpg" alt=img/></a>
         </div>
     </section>
-<script type="text/javascript" src="trip.js"></script>
+
+    <script>
+        let title = document.querySelector(".title")
+        setTimeout(() => {
+            title.classList.add("on")
+        }, 500)
+
+        let imgs=document.querySelectorAll('.container02>div>a>img')
+        imgs.forEach(()=>{})
+    </script>
 </body>
 </html>

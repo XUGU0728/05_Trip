@@ -17,6 +17,19 @@
         </div></a>
         <a href="part3.html"><div>PART3</div></a>
         <a href="part4.html"><div>PART4</div></a>
+    
+        <div class="mobileNav">
+            <div class="hamburger">&#9776;</div>
+            <a href="index.html"><div class="title1">Wanderer</div></a>
+            <a href="index.html"><div class="title2">방랑자 · 여행자</div></a>
+            <div class="mobileMenu">
+                <a href="index.html">HOME</a>
+                <a href="part1.html">PART1</a>
+                <a href="part2.html">PART2</a>
+                <a href="part3.html">PART3</a>
+                <a href="part4.html">PART4</a>
+            </div>
+        </div>
     </nav>
 
     <section class="part1Con01">
@@ -37,10 +50,16 @@
             <div>※ 본 프로젝트는 학습목적의 비상업용 포트폴리오입니다.</div>
         </div>
         <div class="lastText">
-            <div>Roor of Wanderer · 최서하</div>
+            <div>Room of Wanderer · CHOE SEO HA</div>
         </div>
         <div class="Btn">기획서 보기</div>
     </footer>
-<script type="text/javascript" src="trip.js"></script>
+    <script>
+        let hamburger = document.querySelector(".hamburger")
+        let mobileMenu = document.querySelector(".mobileMenu")
+        hamburger.addEventListener("click", () => {
+            mobileMenu.classList.toggle("show")
+        })
+    </script>
 </body>
 </html>
