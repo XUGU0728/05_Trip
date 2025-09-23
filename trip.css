@@ -260,7 +260,7 @@ nav{width: 100%; height: 60px; background-color: #6f6869; color: #F7F5F2; displa
     }
 
 /* 여기부터 PART4 */
-.part4Con01{width: 100%; height: 100vh; position: relative; overflow: hidden;}
+.part4Con01{width: 100%; height: 100dvh; position: relative; overflow: hidden;}
 .part4Title{color: #F7F5F2; font-weight: 800; text-align: center; line-height: 130px; font-size: 80px; width: 400px; height: 130px; background-color: #8f877f; border-radius: 2px; position: absolute; top: 40%; left: 40%; z-index: 10; cursor: grab;}
 .part4Con02{width: 100%; height: 100vh; display: flex; position: absolute; top: 10%;}
 .part4Con02>div{position: absolute;}
@@ -279,14 +279,14 @@ nav{width: 100%; height: 60px; background-color: #6f6869; color: #F7F5F2; displa
     /*모바일*/
     @media(max-width:480px){
         .part4Title{top: 5%; left: 5%;}
-        .part4Con02 > .mover:nth-child(1){width: 40%; left: 2%; top: 0%;}
-        .part4Con02 > .mover:nth-child(2){width: 40%; left: 55%; top: 55%;}
-        .part4Con02 > .mover:nth-child(3){width: 40%; left: 30%; top: 25%;}
-        .part4Con02 > .mover:nth-child(4){width: 40%; left: 45%; top: 25%;}
-        .part4Con02 > .mover:nth-child(5){width: 40%; left: 55%; top: 5%;}
-        .part4Con02 > .mover:nth-child(6){width: 40%; left: 10%; top: 35%;}
-        .part4Con02 > .mover:nth-child(7){width: 40%; left: 2%; top: 50%;}
-        .part4Con02 > .mover:nth-child(8){width: 40%; left: 45%; top: 65%;}
+        .part4Con02 > .mover:nth-child(1){width: 40%; height: auto; left: 2%; top: 0%;}
+        .part4Con02 > .mover:nth-child(2){width: 40%; height: auto; left: 55%; top: 55%;}
+        .part4Con02 > .mover:nth-child(3){width: 40%; height: auto; left: 30%; top: 75%;}
+        .part4Con02 > .mover:nth-child(4){width: 40%; height: auto; left: 45%; top: 25%;}
+        .part4Con02 > .mover:nth-child(5){width: 40%; height: auto; left: 55%; top: 5%;}
+        .part4Con02 > .mover:nth-child(6){width: 40%; height: auto; left: 10%; top: 35%;}
+        .part4Con02 > .mover:nth-child(7){width: 40%; height: auto; left: 2%; top: 50%;}
+        .part4Con02 > .mover:nth-child(8){width: 40%; height: auto; left: 45%; top: 65%;}
         .part4Con02 > div:nth-child(9){left: 15%; top: 20%;}
     }
 
