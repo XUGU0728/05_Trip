@@ -54,7 +54,7 @@
         <div class="lastText">
             <div>Room of Wanderer · CHOE SEO HA</div>
         </div>
-        <div class="Btn">기획서 보기</div>
+        <a href="project_proposal.pdf"><div class="Btn">기획서 보기</div></a>
     </footer>
 
     <script>
@@ -65,26 +65,56 @@
         })
 
         function dragAble(el){
-            let down=false
-            let px=0, py=0, tx=0, ty=0
-            el.addEventListener('mousedown', (e)=>{
-                down=true
-                px=e.clientX
-                py=e.clientY
-            })
-            window.addEventListener('mousemove', (e)=>{
-                if(!down)return
-                let dx=e.clientX-px 
-                let dy=e.clientY-py
-                px=e.clientX
-                py=e.clientY
-                tx+=dx
-                ty+=dy
-                el.style.transform=`translate(${tx}px,${ty}px)`
-            })
-            window.addEventListener('mouseup', ()=>{
-                down=false
-            })
+            let down = false
+            let px = 0, py = 0 //이전 좌표
+            let tx = 0, ty = 0 //누적 이동값
+
+            // 드래그 시작 (마우스 + 터치)
+            function start(e){
+                down = true
+                if(e.type === "mousedown"){
+                    px = e.clientX
+                    py = e.clientY
+                } else if(e.type === "touchstart"){
+                    px = e.touches[0].clientX //touches자체가 여러손가락을 염두에 둔 배열객체임.
+                    py = e.touches[0].clientY
+                }
+            }
+
+            // 드래그 중 (마우스 + 터치)
+            function move(e){
+                if(!down) return
+                let clientX, clientY
+                if(e.type === "mousemove"){
+                    clientX = e.clientX
+                    clientY = e.clientY
+                } else if(e.type === "touchmove"){
+                    clientX = e.touches[0].clientX
+                    clientY = e.touches[0].clientY
+                }
+                let dx = clientX - px
+                let dy = clientY - py
+                px = clientX
+                py = clientY
+                tx += dx
+                ty += dy
+                el.style.transform = `translate(${tx}px, ${ty}px)`
+                e.preventDefault() // 터치 스크롤 방지?
+            }
+
+            // 드래그 끝 (마우스 + 터치)
+            function end(){
+                down = false
+            }
+
+            el.addEventListener("mousedown", start)
+            el.addEventListener("touchstart", start)
+
+            window.addEventListener("mousemove", move)
+            window.addEventListener("touchmove", move)
+
+            window.addEventListener("mouseup", end)
+            window.addEventListener("touchend", end)
         }
 
         let mover=document.querySelectorAll('.mover')

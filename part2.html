@@ -53,7 +53,7 @@
         <div class="lastText">
             <div>Room of Wanderer · CHOE SEO HA</div>
         </div>
-        <div class="Btn">기획서 보기</div>
+        <a href="project_proposal.pdf"><div class="Btn">기획서 보기</div></a>
     </footer>
 
     <script>
@@ -75,19 +75,17 @@
         })
 
         window.addEventListener("scroll", () => {
-            let scrollY = window.scrollY;
             let windowHeight = window.innerHeight;
 
             imgs.forEach((el, i) => {
                 if (i >= 3) {
-                let imgTop = el.offsetTop;
-                if (scrollY + windowHeight * 0.9 > imgTop) {
-                    el.style.transitionDelay = `${(i - 3) * 0.3}s`; 
-                    el.classList.add("show");
+                    let rect = el.getBoundingClientRect()
+                    if (rect.top < windowHeight * 0.8) {
+                        el.classList.add("show")
+                    }
                 }
-                }
-            })
-        })
+            });
+        });
     </script>
 </body>
 </html>
