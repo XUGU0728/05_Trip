@@ -224,7 +224,7 @@ nav{width: 100%; height: 60px; background-color: #6f6869; color: #F7F5F2; displa
 
     /*모바일*/
     @media(max-width:480px){
-        .part2Title{font-size: 28px; width: 92%; height: 60px; text-align: center; line-height: 40px; left: 5%;}
+        .part2Title{font-size: 28px; width: 92%; height: 60px; text-align: center; line-height: 40px; left: 5%; top: 9%;}
         .part2Box01{width: 90%; height: 1100px;}
         .part2Box01>div:nth-child(1){top: 8%; left: 0; width: 48%;}
         .part2Box01>div:nth-child(2){top: 8%; right: 0; width: 48%;}
@@ -254,6 +254,7 @@ nav{width: 100%; height: 60px; background-color: #6f6869; color: #F7F5F2; displa
 
     /*모바일*/
     @media(max-width:480px){
+        .part3Box01{height: 100dvh;}
         .rollLeft img, .rollRight img{height: 300px;}
         .rollLeft {animation: rollLeftAni 10s linear infinite;}
         .rollRight {animation: rollRightAni 10s linear infinite;}
@@ -274,7 +275,7 @@ nav{width: 100%; height: 60px; background-color: #6f6869; color: #F7F5F2; displa
 .part4Con02 > .mover:nth-child(7){width: 400px; height: 500px; left: 27%; bottom: 5%;}
 .part4Con02 > .mover:nth-child(8){width: 400px; height: 500px; left: 60%; bottom: 7%;}
 .part4Con02 > div:nth-child(9){background-color: #C08167; color: #F7F5F2; font-weight: 600; text-align: left; font-size: 48px; padding: 25px 25px; width: 300px; height: 170px; left: 64%; top: 5%;}
-.part4Con02>.mover>img{width: 100%; object-fit: contain; cursor: grab;}
+.part4Con02>.mover>img{width: 100%; object-fit: cover; cursor: grab;}
 
     /*모바일*/
     @media(max-width:480px){
@@ -293,13 +294,13 @@ nav{width: 100%; height: 60px; background-color: #6f6869; color: #F7F5F2; displa
 /* 여기부터 footer */
 footer{display: flex; justify-content: center; align-items: center; gap: 25%; color: #F7F5F2; background-color: #6f6869; width: 100%; height: 60px;}
 .footText{font-size: 14px; padding: 10px 10px; line-height: 20px;}
-.lastText{font-size: 18px; padding: 10px 10px; line-height: 20px;}
+.lastText{font-size: 18px; padding: 10px 10px; line-height: 20px; text-align: center;}
 .Btn{background-color: #F7F5F2; color: #6f6869; padding: 10px 15px; cursor: pointer;}
 
     /*모바일*/
     @media(max-width:480px){
-        footer{gap: 10px;}
-        .footText{font-size: 7px; padding: 2px 5px;}
-        .lastText{font-size: 8px; padding: 2px 5px;}
-        .Btn{padding: 2px 5px;}
+        footer{gap: 15px;}
+        .footText{font-size: 6px; padding: 0px 0px;}
+        .lastText{font-size: 7px; padding: 0px 0px;}
+        .Btn{padding: 2px 5px; z-index: 100;}
     }
