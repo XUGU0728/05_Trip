@@ -75,17 +75,17 @@
         })
 
         window.addEventListener("scroll", () => {
-            let windowHeight = window.innerHeight;
+            let windowH = window.innerHeight;
 
             imgs.forEach((el, i) => {
                 if (i >= 3) {
                     let rect = el.getBoundingClientRect()
-                    if (rect.top < windowHeight * 0.8) {
+                    if (rect.top < windowH * 0.8) {
                         el.classList.add("show")
                     }
                 }
-            });
-        });
+            })
+        })
     </script>
 </body>
 </html>
