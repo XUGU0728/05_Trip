@@ -302,6 +302,6 @@ footer{display: flex; justify-content: center; align-items: center; gap: 300px; 
     @media(max-width:480px){
         footer{gap: 15px;}
         .footText{font-size: 6px; padding: 0px 0px;}
-        .lastText{font-size: 7px; padding: 0px 0px;}
+        .lastText{display: none;}
         .Btn{padding: 2px 5px; z-index: 100;}
     }
